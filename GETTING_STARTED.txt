@@ -1,0 +1,177 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║          SNN-REFLEX DRONE PROTOTYPE v0 - BAŞLANGIÇ REHBERİ         ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+🎯 PROJE HAZIR!
+
+Tüm dosyalar başarıyla oluşturuldu. Şimdi projeyi çalıştırmaya hazırsınız.
+
+═══════════════════════════════════════════════════════════════════════
+
+📋 HIZLI BAŞLANGIÇ (5 DAKİKA)
+
+1. Terminali açın ve proje klasörüne gidin:
+   
+   cd snn_reflex_proto
+
+2. Bağımlılıkları yükleyin:
+   
+   pip install -r requirements.txt
+
+3. Kurulumu test edin:
+   
+   python test_setup.py
+
+4. Modeli eğitin (5-10 dakika):
+   
+   python train.py
+
+5. Canlı demo çalıştırın:
+   
+   python run.py
+
+═══════════════════════════════════════════════════════════════════════
+
+📚 DOKÜMANTASYON
+
+README.md           → Detaylı proje açıklaması
+QUICKSTART.md       → Hızlı başlangıç kılavuzu
+COMMANDS.md         → Tüm komutlar ve parametreler
+PROJECT_SUMMARY.md  → Proje özeti ve yol haritası
+
+═══════════════════════════════════════════════════════════════════════
+
+🎮 TEMEL KOMUTLAR
+
+Eğitim:
+  python train.py              # SNN modelini eğit
+  python train_baseline.py     # ANN baseline'ı eğit
+
+Çalıştırma:
+  python run.py                # SNN ile demo
+  python run_baseline.py       # ANN ile demo
+
+Değerlendirme:
+  python benchmark.py          # Performans karşılaştırması
+  python utils.py plot         # Eğitim grafiklerini göster
+
+═══════════════════════════════════════════════════════════════════════
+
+📁 DOSYA YAPISI
+
+snn_reflex_proto/
+│
+├── 📖 Dokümantasyon
+│   ├── README.md
+│   ├── QUICKSTART.md
+│   ├── COMMANDS.md
+│   └── PROJECT_SUMMARY.md
+│
+├── 🔧 Konfigürasyon
+│   ├── config.py
+│   ├── requirements.txt
+│   └── .gitignore
+│
+├── 🧠 Çekirdek Kod
+│   ├── env.py              # 2D ortam
+│   ├── encoder.py          # Spike encoding
+│   ├── teacher.py          # Öğretmen politikası
+│   ├── model.py            # SNN modeli
+│   └── baseline.py         # ANN baseline
+│
+├── 🚀 Scriptler
+│   ├── train.py            # SNN eğitimi
+│   ├── train_baseline.py   # ANN eğitimi
+│   ├── run.py              # SNN demo
+│   ├── run_baseline.py     # ANN demo
+│   ├── benchmark.py        # Karşılaştırma
+│   ├── utils.py            # Yardımcı fonksiyonlar
+│   └── test_setup.py       # Kurulum testi
+│
+└── 📂 Veri
+    ├── data/               # Eğitim verileri
+    ├── checkpoints/        # Eğitilmiş modeller
+    └── logs/               # Loglar ve grafikler
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ BAŞARI KRİTERLERİ
+
+İlk hafta sonunda şunlar olmalı:
+  ✓ Pencere açılıyor
+  ✓ Ajan engeller arasında yaşayabiliyor
+  ✓ Model checkpoint kaydediliyor
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 BEKLENTİLER
+
+Eğitim Doğruluğu:     ~85%
+Hayatta Kalma:        ~150 adım
+Eğitim Süresi:        ~8 dakika (CPU)
+Model Boyutu:         ~1K parametre
+
+═══════════════════════════════════════════════════════════════════════
+
+🐛 SORUN GİDERME
+
+Pygame yüklenmiyor:
+  pip install pygame --upgrade
+
+snnTorch hatası:
+  pip install snntorch --upgrade
+
+Model bulunamadı:
+  Önce train.py çalıştırın
+
+Çok yavaş:
+  config.py içinde TIME_STEPS ve TRAIN_SAMPLES değerlerini azaltın
+
+═══════════════════════════════════════════════════════════════════════
+
+🚀 SONRAKİ ADIMLAR
+
+1. ✅ İlk prototip çalışıyor
+2. 🔄 Parametreleri optimize edin
+3. 🔄 Daha karmaşık ortamlar ekleyin
+4. 🔄 Online learning deneyin
+5. 🚁 Drone simülasyonuna geçin
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 ÖNEMLİ NOTLAR
+
+• Bu bir "oyuncak proje" değil, çekirdek ispattır
+• SNN'nin basit refleks görevinde çalışabilirliğini test eder
+• Başarılı olursa drone simülasyonuna geçilir
+• Her adımda karşılaştırma yapın (SNN vs ANN)
+• Görsel demo hazırlayın
+
+═══════════════════════════════════════════════════════════════════════
+
+📞 YARDIM
+
+Detaylı bilgi için:
+  README.md dosyasını okuyun
+  
+Hızlı başlangıç için:
+  QUICKSTART.md dosyasını okuyun
+  
+Komut referansı için:
+  COMMANDS.md dosyasını okuyun
+
+═══════════════════════════════════════════════════════════════════════
+
+🎉 BAŞARILAR!
+
+Projeniz hazır. Şimdi çalıştırmaya başlayabilirsiniz:
+
+  cd snn_reflex_proto
+  pip install -r requirements.txt
+  python test_setup.py
+  python train.py
+  python run.py
+
+═══════════════════════════════════════════════════════════════════════

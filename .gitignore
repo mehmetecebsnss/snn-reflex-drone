@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# PyTorch
+*.pt
+*.pth
+*.ckpt
+!checkpoints/*.pt
+
+# Logs
+*.log
+logs/*.txt
+logs/*.npz
+!logs/optimization_results.json
+!logs/benchmark_drone_3d_*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# PyBullet
+*.bullet
+
+# Temporary files
+tmp/
+temp/
+*.tmp

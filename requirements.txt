@@ -1,0 +1,8 @@
+numpy
+pygame
+torch
+snntorch
+matplotlib
+tqdm
+scikit-learn
+psutil

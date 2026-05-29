@@ -1,0 +1,7 @@
+{
+  "Standard (1000 steps)": {
+    "SNN": {
+      "performance": {
+        "steps_mean": 165.9,
+        "steps_std": 0.3,
+        "steps_min": 

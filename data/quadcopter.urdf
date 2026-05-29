@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<robot name="quadcopter">
+  
+  <!-- Base Link (Body) - Compact collision sphere -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.002"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15 0.15 0.05"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    
+    <!-- Collision: Use sphere for simpler physics (like original) -->
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.2"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- Front Left Arm -->
+  <link name="arm_front_left">
+    <inertial>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.2"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for arms - only body collides -->
+  </link>
+  
+  <joint name="joint_arm_fl" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_front_left"/>
+    <origin xyz="0.075 0.075 0" rpy="0 1.5708 0.7854"/>
+  </joint>
+  
+  <!-- Front Right Arm -->
+  <link name="arm_front_right">
+    <inertial>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.2"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for arms - only body collides -->
+  </link>
+  
+  <joint name="joint_arm_fr" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_front_right"/>
+    <origin xyz="0.075 -0.075 0" rpy="0 1.5708 -0.7854"/>
+  </joint>
+  
+  <!-- Back Left Arm -->
+  <link name="arm_back_left">
+    <inertial>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.2"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for arms - only body collides -->
+  </link>
+  
+  <joint name="joint_arm_bl" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_back_left"/>
+    <origin xyz="-0.075 0.075 0" rpy="0 1.5708 2.3562"/>
+  </joint>
+  
+  <!-- Back Right Arm -->
+  <link name="arm_back_right">
+    <inertial>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.2"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for arms - only body collides -->
+  </link>
+  
+  <joint name="joint_arm_br" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_back_right"/>
+    <origin xyz="-0.075 -0.075 0" rpy="0 1.5708 -2.3562"/>
+  </joint>
+  
+  <!-- Front Left Propeller -->
+  <link name="prop_front_left">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.01"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for propellers -->
+  </link>
+  
+  <joint name="joint_prop_fl" type="fixed">
+    <parent link="arm_front_left"/>
+    <child link="prop_front_left"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Front Right Propeller -->
+  <link name="prop_front_right">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.01"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for propellers -->
+  </link>
+  
+  <joint name="joint_prop_fr" type="fixed">
+    <parent link="arm_front_right"/>
+    <child link="prop_front_right"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Back Left Propeller -->
+  <link name="prop_back_left">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.01"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for propellers -->
+  </link>
+  
+  <joint name="joint_prop_bl" type="fixed">
+    <parent link="arm_back_left"/>
+    <child link="prop_back_left"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Back Right Propeller -->
+  <link name="prop_back_right">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.005"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.01"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+    
+    <!-- No collision for propellers -->
+  </link>
+  
+  <joint name="joint_prop_br" type="fixed">
+    <parent link="arm_back_right"/>
+    <child link="prop_back_right"/>
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+  </joint>
+  
+</robot>

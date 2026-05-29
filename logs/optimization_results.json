@@ -1,0 +1,41 @@
+{
+  "SNN": {
+    "steps_mean": 917.2,
+    "steps_std": 130.79281325822149,
+    "steps_min": 598.0,
+    "steps_max": 1000.0,
+    "steps_median": 1000.0,
+    "reward_mean": 1053.7139989868258,
+    "reward_std": 125.32494405128817,
+    "collision_rate": 30.0,
+    "timeout_rate": 60.0,
+    "oob_rate": 10.0,
+    "success_rate": 60.0
+  },
+  "ANN": {
+    "steps_mean": 645.4,
+    "steps_std": 1.8547236990991407,
+    "steps_min": 639.0,
+    "steps_max": 649.0,
+    "steps_median": 646.0,
+    "reward_mean": 216.19915542839834,
+    "reward_std": 13.153105091971208,
+    "collision_rate": 0.0,
+    "timeout_rate": 0.0,
+    "oob_rate": 100.0,
+    "success_rate": 0.0
+  },
+  "Expert": {
+    "steps_mean": 800.5,
+    "steps_std": 187.2013621745312,
+    "steps_min": 412.0,
+    "steps_max": 1000.0,
+    "steps_median": 891.0,
+    "reward_mean": 809.5023045006097,
+    "reward_std": 124.74125238723951,
+    "collision_rate": 25.0,
+    "timeout_rate": 5.0,
+    "oob_rate": 70.0,
+    "success_rate": 5.0
+  }
+}
